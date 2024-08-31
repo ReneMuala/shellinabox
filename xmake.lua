@@ -1,0 +1,8 @@
+add_rules("mode.debug", "mode.release", "plugin.compile_commands.autoupdate")
+add_requires("openssl", "zlib", {system = false})
+target("shellinabox")
+set_kind("binary")
+add_includedirs(".")
+add_files("shellinabox/*.c", "libhttp/*.c", "logging/*.c")
+add_packages("openssl", "zlib")
+-- add_links("crypto", "ssl", "z")
